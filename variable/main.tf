@@ -4,6 +4,7 @@ resource "random_pet" "example" {
   }
 }
 
+
 variable "string" {
   default = "qwerty"
 }
