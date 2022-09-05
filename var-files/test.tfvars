@@ -1,1 +1,1 @@
-string = "var-file"
+string = "var-file var"
