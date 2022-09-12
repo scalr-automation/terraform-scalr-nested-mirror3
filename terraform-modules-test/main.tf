@@ -3,5 +3,5 @@ module "sub1" {
 }
   
   module "sub2" {
-    source  = "./Sub2"
+    source  = "./sub2"
 }
