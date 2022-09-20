@@ -1,11 +1,10 @@
 resource "random_pet" "example" {
   keepers = {
-    string  = var.string
+    string  = var.version_01
   }
 }
 
 
-variable "string" {
-  default   = "qwerty"
-  sensitive = true
+variable "version_01" {
+  type = string
 }
