@@ -17,7 +17,7 @@ resource "null_resource" "resource3" {
  }
 }
 
-resource "random_integer" "ff55cout0129timeout0123456789timeout0123456789timeout023456789" {
+resource "random_integer" "ff55" {
   count = 1
   min = 32
   max = 180
