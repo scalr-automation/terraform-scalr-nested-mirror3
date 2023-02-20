@@ -1,5 +1,5 @@
 resource "random_pet" "pet" {
-  count = 5
+  count = var.exec_count
   keepers = {
     timestamp = timestamp()
   }
