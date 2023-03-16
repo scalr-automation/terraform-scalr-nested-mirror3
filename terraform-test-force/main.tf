@@ -17,7 +17,7 @@ resource "null_resource" "resource3" {
  }
 }
 
-resource "random_integer" "kind-when-there" {
+resource "random_integer" "picture-thus-spring" {
   count = 1
   min = 32
   max = 180
