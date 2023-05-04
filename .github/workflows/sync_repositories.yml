@@ -1,0 +1,32 @@
+name: Sync repos
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.repository == 'scalr-automation/terraform-scalr-nested'
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: Set up Git
+        run: |
+          git config --global user.name "scalr-autotester"
+          git config --global user.email "scalr-autotester@scalr.com"
+          git config --unset-all http.https://github.com/.extraheader
+      - name: Sync repositories
+        run: |
+          git remote add repo1 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror1.git
+          git push --force repo1 master
+          git remote add repo2 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror2.git
+          git push --force repo2 master
+          git remote add repo3 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror3.git
+          git push --force repo3 master
+          git remote add repo4 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror4.git
+          git push --force repo4 master
+          git remote add repo5 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror5.git
+          git push --force repo5 master
