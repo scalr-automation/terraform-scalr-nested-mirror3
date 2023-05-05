@@ -21,12 +21,12 @@ jobs:
       - name: Sync repositories
         run: |
           git remote add repo1 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror1.git
-          git push --force repo1 master
+          git push --force repo1 master --follow-tags
           git remote add repo2 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror2.git
-          git push --force repo2 master
+          git push --force repo2 master --follow-tags
           git remote add repo3 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror3.git
-          git push --force repo3 master
+          git push --force repo3 master --follow-tags
           git remote add repo4 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror4.git
-          git push --force repo4 master
+          git push --force repo4 master --follow-tags
           git remote add repo5 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror5.git
-          git push --force repo5 master
+          git push --force repo5 master --follow-tags
