@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    mycloud = {
+    null = {
       source = "hashicorp/null"
       version = "3.2.0"
     }
