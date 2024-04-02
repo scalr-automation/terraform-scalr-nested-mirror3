@@ -6,5 +6,5 @@ resource "random_pet" "pet" {
 }
 
 terraform {
-  required_version = "~> 0.15.1"
+  required_version = "~> 1.4.0"
 }
