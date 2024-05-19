@@ -66,10 +66,6 @@
     <td><pre><code>13</code></pre></td>
   </tr>
   <tr>
-    <td>number_sensitive</td>
-    <td><pre><code>12</code></pre></td>
-  </tr>
-  <tr>
     <td>object_with_optional_attribute</td>
     <td><pre><code>{
   a = "some string (b attribute should be missing)"
