@@ -111,10 +111,6 @@ resource "null_resource" "nullable_trigger" {
   }
 }
 
-output "nullable_output" {
-  value = var.nullable
-}
-
 # variable with type any
 
 variable "type_any" {
