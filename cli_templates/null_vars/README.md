@@ -2,8 +2,8 @@
 
 | Key              | Value | HCL   |
 |------------------|-------|-------|
-| not-set-hcl      | Not set | true  |
-| not-set-non-hcl  | Not set | false |
+| not-set-hcl      | | true  |
+| not-set-non-hcl  | | false |
 | null-hcl         | null  | true  |
 | null-non-hcl     | null  | false |
 
