@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: master
+          fetch-depth: 0
       - name: Set up Git
         run: |
           git config --global user.name "scalr-autotester"
@@ -20,13 +21,15 @@ jobs:
           git config --unset-all http.https://github.com/.extraheader
       - name: Sync repositories
         run: |
-          git remote add repo1 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror1.git
+          git remote add repo1 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror1.git
           git push --force repo1 master --follow-tags
-          git remote add repo2 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror2.git
+          git remote add repo2 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror2.git
           git push --force repo2 master --follow-tags
-          git remote add repo3 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror3.git
+          git remote add repo3 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror3.git
           git push --force repo3 master --follow-tags
-          git remote add repo4 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror4.git
+          git remote add repo4 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror4.git
           git push --force repo4 master --follow-tags
-          git remote add repo5 https://scalr-autotester13:${{ secrets.GH_PAT_13 }}@github.com/scalr-automation/terraform-scalr-nested-mirror5.git
+          git remote add repo5 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror5.git
           git push --force repo5 master --follow-tags
+          git remote add gh-ee-repo https://AKramarenko:${{ secrets.GH_EE_TOKEN }}@github-ee.main.scalr.dev/scalr-automation/terraform-scalr-nested.git
+          git push --force gh-ee-repo main --follow-tags
