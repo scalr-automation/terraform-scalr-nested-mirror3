@@ -2,14 +2,12 @@ terraform {
   required_providers {
     time = {
       source  = "hashicorp/time"
-      version = "0.12.0"
+      version = var.time_version
     }
   }
 }
 
-resource "tls_private_key" "ecdsa-p384-example" {
-  algorithm   = "ECDSA"
-  ecdsa_curve = "P384"
+variable "time_version" {
+  description = "Time provider version"
+  type        = string
 }
-
-resource "time_static" "example" {}
