@@ -6,7 +6,7 @@ terraform {
   required_providers {
     time = {
       source  = "hashicorp/time"
-      version = local.time_provider_version
+      version = "${local.time_provider_version}"
     }
   }
 }
