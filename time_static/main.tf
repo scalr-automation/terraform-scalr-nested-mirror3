@@ -1,8 +1,12 @@
+locals {
+  time_provider_version = var.time_version
+}
+
 terraform {
   required_providers {
     time = {
-      source = "hashicorp/time"
-      version = "${var.time_version}"
+      source  = "hashicorp/time"
+      version = local.time_provider_version
     }
   }
 }
