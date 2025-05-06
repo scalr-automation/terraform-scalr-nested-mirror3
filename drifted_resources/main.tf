@@ -47,4 +47,5 @@ resource "scalr_variable" "var_shell" {
 
 variable "T1075" {
   type = string
+  default = "default"
 }
