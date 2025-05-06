@@ -44,3 +44,7 @@ resource "scalr_variable" "var_shell" {
   category   = "shell"
   account_id = data.scalr_current_account.data_acc.id
 }
+
+variable "T1075" {
+  type = string
+}
