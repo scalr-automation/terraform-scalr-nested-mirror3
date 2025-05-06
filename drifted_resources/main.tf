@@ -15,7 +15,7 @@ output "out_acc" {
 
 resource "scalr_environment" "dana_env" {
   count      = 1
-  name       = "test-env-${count.index}"
+  name       = "${T1075}-test-env-${count.index}"
   account_id = data.scalr_current_account.data_acc.id
 }
 
@@ -24,7 +24,7 @@ output "out_env" {
 }
 
 resource "scalr_iam_team" "team" {
-  name        = "team-${count.index}"
+  name        = "${T1075}-team-${count.index}"
   count       = 2
   description = "bug fix"
   account_id  = data.scalr_current_account.data_acc.id
@@ -32,14 +32,14 @@ resource "scalr_iam_team" "team" {
 
 resource "scalr_variable" "var_terraform" {
   count      = 1
-  key        = "var-${count.index}"
+  key        = "${T1075}-var-${count.index}"
   value      = "TRACE"
   category   = "terraform"
   account_id = data.scalr_current_account.data_acc.id
 }
 
 resource "scalr_variable" "var_shell" {
-  key        = "key1"
+  key        = "${T1075}-key1"
   value      = "1"
   category   = "shell"
   account_id = data.scalr_current_account.data_acc.id
