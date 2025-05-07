@@ -39,7 +39,7 @@ resource "scalr_variable" "var_terraform" {
 }
 
 resource "scalr_variable" "var_shell" {
-  key        = "key1"
+  key        = "${var.T1075}-key1"
   value      = "1"
   category   = "shell"
   account_id = data.scalr_current_account.data_acc.id
