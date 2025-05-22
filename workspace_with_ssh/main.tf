@@ -1,3 +1,3 @@
 module "git" {
-  source = "git::ssh://git@github.com/scalr-automation/terraform-scalr-flat.git?ref=T1100"
+  source = "git::ssh://git@github-ee.main.scalr.dev/scalr-automation/terraform-scalr-flat"
 }
