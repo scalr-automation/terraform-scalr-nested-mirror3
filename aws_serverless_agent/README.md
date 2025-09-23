@@ -5,7 +5,7 @@ This project sets up a serverless infrastructure using AWS Lambda, API Gateway, 
 
 ## Setup
 1. Create a Workspace in Scalr from this repo and configure the following variables in the Workspace:
-   - `scalr_hostname`: The hostname of your Scalr instance (e.g., `your-instance.scalr.dev`)
+   - `scalr_hostname`: The Scalr hostname (e.g., `<acc-name>.host.testenv.scalr.dev`)
    - `scalr_token`: Your Scalr API token
 2. Create AWS Provider Configuration and link it to the workspace
 
