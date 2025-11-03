@@ -1,0 +1,1 @@
+# Scalr test policies package
