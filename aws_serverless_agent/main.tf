@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
     scalr = {
       source = "scalr/scalr"
     }
@@ -27,10 +31,18 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+resource "random_id" "deployment" {
+  byte_length = 4
+}
+
+locals {
+  resource_prefix = "e2e-${random_id.deployment.hex}"
+}
+
 module "networking" {
   source = "./modules/aws/networking"
 
-  name = var.vpc_name
+  name = "${local.resource_prefix}-${var.vpc_name}"
   cidr = "10.0.0.0/16"
   azs = slice(data.aws_availability_zones.available.names, 0, 2)
   public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
@@ -43,7 +55,7 @@ module "lambda" {
   cluster_name        = module.ecs.cluster_name
   task_definition_arn = module.ecs.task_definition_arn
   security_group_id   = module.ecs.security_group_id
-  function_name       = var.lambda_function_name
+  function_name       = "${local.resource_prefix}-${var.lambda_function_name}"
   handler             = var.lambda_handler
   memory_size         = var.lambda_memory_size
   runtime             = var.lambda_runtime
@@ -54,7 +66,7 @@ module "lambda" {
 module "api_gateway" {
   source = "./modules/aws/api-gateway"
 
-  name                   = var.api_gateway_name
+  name                   = "${local.resource_prefix}-${var.api_gateway_name}"
   environment            = var.api_gateway_environment
   additional_allowed_ips = []  # Will be set after agent pool is created
   allow_all_ingress      = var.allow_all_ingress
@@ -75,12 +87,12 @@ module "ecs" {
   limit_cpu         = var.ecs_limit_cpu
   limit_memory      = var.ecs_limit_memory
   image             = var.ecs_image
-  cluster_name      = var.ecs_cluster_name
-  task_name         = var.ecs_task_name
+  cluster_name      = "${local.resource_prefix}-${var.ecs_cluster_name}"
+  task_name         = "${local.resource_prefix}-${var.ecs_task_name}"
   scalr_url = module.agent_pool.scalr_url
   scalr_agent_token = module.agent_pool.agent_token
 
-  security_group_name = var.ecs_security_group_name
+  security_group_name = "${local.resource_prefix}-${var.ecs_security_group_name}"
 }
 
 # Configure the agent pool as serverless after all infrastructure is created
