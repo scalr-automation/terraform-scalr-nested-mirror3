@@ -1,6 +1,5 @@
 variable "sensitive_tf_var" {
   type      = string
-  sensitive = true
 }
 
 resource "null_resource" "test" {
