@@ -1,9 +1,8 @@
 variable "sensitive_tf_var" {
-  type      = string
+  type = string
 }
 
-resource "null_resource" "test" {
-  provisioner "local-exec" {
-    command = "echo SHELL_VAR=$SENSITIVE_SHELL_VAR && echo TF_VAR=${var.sensitive_tf_var}"
-  }
+# Output the terraform variable
+output "sensitive_tf_var_output" {
+  value = var.sensitive_tf_var
 }
