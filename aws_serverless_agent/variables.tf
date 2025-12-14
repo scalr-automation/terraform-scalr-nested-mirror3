@@ -88,18 +88,7 @@ variable "lambda_memory_size" {
 }
 
 variable "vpc_name" {
-  type = string
+  type        = string
   description = "VPC Network name"
-  default = "scalr-agent"
+  default     = "scalr-agent"
 }
-
-variable "scalr_hostname" {
-  type = string
-  description = "host name of Scalr instance"
-}
-
-variable "scalr_token" {
-  type = string
-  description = "Scalr token"
-}
-
