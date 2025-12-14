@@ -10,8 +10,8 @@ def lambda_handler(event, context):
     print("Headers: ", headers)
 
     # Read credentials from webhook headers
-    scalr_token = headers.get('x-scalr-token')
-    scalr_url = headers.get('x-scalr-url')
+    scalr_token = headers.get('X-Scalr-Token')
+    scalr_url = headers.get('X-Scalr-Url')
 
     if not scalr_token or not scalr_url:
         error_msg = 'Missing required headers: X-Scalr-Token or X-Scalr-Url'
