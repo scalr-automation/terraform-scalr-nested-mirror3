@@ -47,3 +47,8 @@ variable "memory_size" {
   description = "Memory size for the Lambda function in MB"
   type        = number
 }
+
+variable "container_name" {
+  description = "Name of the container in the ECS task definition"
+  type        = string
+}

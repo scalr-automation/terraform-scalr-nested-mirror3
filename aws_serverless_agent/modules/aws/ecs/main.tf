@@ -108,23 +108,15 @@ resource "aws_ecs_task_definition" "webhook" {
       essential = true
 
       environment = [
-    {
-      name  = "SCALR_URL"
-      value = var.scalr_url
-    },
-    {
-      name  = "SCALR_TOKEN"
-      value = var.scalr_agent_token
-    },
-    {
-      name  = "SCALR_SINGLE"
-      value = "true"
-    },
-    {
-      name  = "SCALR_DRIVER"
-      value = "local"
-    }
-  ]
+        {
+          name  = "SCALR_SINGLE"
+          value = "true"
+        },
+        {
+          name  = "SCALR_DRIVER"
+          value = "local"
+        }
+      ]
 
       logConfiguration = {
         logDriver = "awslogs"

@@ -29,9 +29,6 @@ variable "image" {
   description = "ECS container image"
 }
 
-variable "scalr_url" {}
-variable "scalr_agent_token" {}
-
 variable "limit_cpu" {
   type        = number
   description = "The hard limit for the cpu unit used by the task"

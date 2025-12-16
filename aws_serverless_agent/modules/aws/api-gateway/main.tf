@@ -16,7 +16,7 @@ resource "aws_api_gateway_rest_api" "scalr_webhook" {
 }
 
 resource "aws_api_gateway_rest_api" "test" {
-  name = "example-rest-api"
+  name = "${var.name}-policy"
 }
 
 data "aws_iam_policy_document" "test" {
