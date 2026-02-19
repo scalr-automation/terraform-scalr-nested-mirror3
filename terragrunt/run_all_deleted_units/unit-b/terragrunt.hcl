@@ -3,5 +3,10 @@ include "root" {
 }
 
 terraform {
-  source = "."
+  source = "../main.tf"
+}
+
+inputs = {
+  module_name = "unit-b"
+  resource_id = "resource-B"
 }
