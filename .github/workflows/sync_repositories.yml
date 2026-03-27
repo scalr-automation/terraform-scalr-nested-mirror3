@@ -33,5 +33,3 @@ jobs:
           git push --force repo4 master --follow-tags
           git remote add repo5 https://scalr-autotester13:${{ secrets.GH_PAT_13_2 }}@github.com/scalr-automation/terraform-scalr-nested-mirror5.git
           git push --force repo5 master --follow-tags
-          git remote add gh-ee-repo https://AKramarenko:${{ secrets.GH_EE_TOKEN }}@github-ee.main.scalr.dev/scalr-automation/terraform-scalr-nested.git
-          git push --force gh-ee-repo master --follow-tags

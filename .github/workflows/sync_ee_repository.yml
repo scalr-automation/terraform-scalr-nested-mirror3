@@ -1,0 +1,26 @@
+name: Sync repos
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: "never" == "cause github ee is disabled"
+    #if github.repository == 'scalr-automation/terraform-scalr-nested'
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Set up Git
+        run: |
+          git config --unset-all http.https://github.com/.extraheader
+      - name: Sync repositories
+        run: |
+          git remote add gh-ee-repo https://AKramarenko:${{ secrets.GH_EE_TOKEN }}@github-ee.main.scalr.dev/scalr-automation/terraform-scalr-nested.git
+          git push --force gh-ee-repo master --follow-tags
