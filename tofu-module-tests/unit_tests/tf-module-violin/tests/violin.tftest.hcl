@@ -4,8 +4,8 @@ run "default_name" {
 
   // Output should equal the default value of variable "name"
   assert {
-    condition     = output.instrument_name == "guitar" // Assertion for check failure
-    error_message = "Expected instrument_name output to equal default value 'guitar'" // Assertion for check failure
+    condition     = output.instrument_name == "violin"
+    error_message = "Expected instrument_name output to equal default value 'violin'"
 }
 
   // And it should not be empty
