@@ -1,5 +1,3 @@
-resource "random_pet" "run_from_vcs" {
-  keepers = {
-    timestamp = timestamp()
-  }
+resource "terraform_data" "data" {
+  random_pet = timestamp()
 }
