@@ -1,0 +1,3 @@
+This directory intentionally has no .tf files.
+Used by the e2e is_billable test to trigger plan_init_failed
+("No configuration files found").
