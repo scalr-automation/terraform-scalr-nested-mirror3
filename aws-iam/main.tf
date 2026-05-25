@@ -8,8 +8,14 @@ terraform {
 }
 
 provider "aws" {
+  alias = "prod"
   region = "us-east-1"
 }
+
+provider "aws" {
+  region = "us-east-1"
+}
+
 
 variable "role_name" {
   type    = string
