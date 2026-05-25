@@ -9,7 +9,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket         = "scalr-e2e-tg-test"
+    bucket         = get_env("BUCKET_NAME")
     key            = "${local.state_prefix}/${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
