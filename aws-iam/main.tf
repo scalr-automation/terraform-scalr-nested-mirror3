@@ -20,6 +20,7 @@ variable "role_name" {
 
 resource "aws_iam_role" "this" {
   name = var.role_name
+  provider = aws.prod
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
