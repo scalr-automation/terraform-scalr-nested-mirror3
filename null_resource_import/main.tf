@@ -1,15 +1,15 @@
 terraform {
   required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.9"
     }
   }
 }
 
 import {
-  to   = null_resource.imported
-  id   = "null-resource-external-id"
+  to = time_static.imported
+  id = "2020-02-12T06:36:13Z"
 }
 
-resource "null_resource" "imported" {}
+resource "time_static" "imported" {}
