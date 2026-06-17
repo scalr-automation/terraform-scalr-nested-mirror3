@@ -12,13 +12,13 @@ provider "aws" {
 }
 
 
-variable "role_name" {
+variable "role_delegation_name" {
   type    = string
   default = "aws_iam_user_name_"
 }
 
 resource "aws_iam_role" "this" {
-  name = var.role_name
+  name = var.role_delegation_name
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
