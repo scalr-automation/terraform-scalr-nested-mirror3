@@ -16,6 +16,11 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "labels_test" {
-  name     = "scalr-e2e-default-labels-test"
-  location = "US"
+  name          = "scalr-e2e-default-labels-test"
+  location      = "US"
+  force_destroy = true
+
+  labels = {
+    app = "bucket-test"
+  }
 }
