@@ -21,7 +21,7 @@ resource "null_resource" "binary_output_png" {
 # Test 2: Output random binary data
 resource "null_resource" "binary_output_random" {
   provisioner "local-exec" {
-    command = "python3 -c 'import sys; sys.stdout.buffer.write(b\"\\x89\\xff\\xfe\\xfd\"); sys.stdout.flush(); print(\"text after binary\")'"
+    command = "printf '\\x89\\xff\\xfe\\xfd' && echo 'text after binary'"
   }
 
   triggers = {
