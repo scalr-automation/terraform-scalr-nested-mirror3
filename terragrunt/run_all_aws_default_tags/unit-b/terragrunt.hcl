@@ -10,7 +10,6 @@ dependency "unit_a" {
   mock_outputs                            = {
     parameter_name = "/scalr-e2e/run-all-default-tags/unit-a"
   }
-  mock_outputs_allowed_terraform_commands = ["init", "validate", "plan"]
 }
 
 inputs = {
