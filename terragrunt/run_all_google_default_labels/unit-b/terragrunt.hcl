@@ -7,7 +7,7 @@ include "root" {
 dependency "unit_a" {
   config_path = "../unit-a"
 
-  mock_outputs                            = {
+  mock_outputs = {
     bucket_name = "scalr-e2e-run-all-labels-unit-a"
   }
 }

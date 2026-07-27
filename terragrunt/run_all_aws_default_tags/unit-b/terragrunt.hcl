@@ -7,7 +7,7 @@ include "root" {
 dependency "unit_a" {
   config_path = "../unit-a"
 
-  mock_outputs                            = {
+  mock_outputs = {
     parameter_name = "/scalr-e2e/run-all-default-tags/unit-a"
   }
 }
