@@ -1,2 +1,2 @@
-resource "terraform_data" "update" { input = "v1" }
-resource "terraform_data" "destroy" { input = "v1" }
+resource "terraform_data" "update" { input = "v2" }
+resource "terraform_data" "add" { input = "v1" }
