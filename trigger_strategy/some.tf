@@ -1,3 +1,4 @@
-resource "terraform_data" "some" {
+resource "terraform_data" "data" {
+  input = timestamp()
   triggers_replace = timestamp()
 }
