@@ -5,4 +5,5 @@ only when the test run gets credentials from a provider configuration attached t
 configuration.
 
 The `account_id` and `environment_id` variables have no defaults: the e2e test pushes a
-`terraform.tfvars` with them into the pull request branch.
+`e2e.auto.tfvars` with them into the pull request branch (Scalr ignores
+`terraform.tfvars`).
