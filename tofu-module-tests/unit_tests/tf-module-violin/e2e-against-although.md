@@ -1,0 +1,1 @@
+Test run triggered from 'ahead-yard-goal-suddenly'.
